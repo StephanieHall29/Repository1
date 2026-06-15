@@ -1,16 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-playfair);
-  --font-wordmark: var(--font-cormorant);
-}
-
-@theme inline {
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-playfair);
-}
-
 body {
   background: #ffffff;
   color: #1a1a1a;

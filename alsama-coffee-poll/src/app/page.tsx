@@ -1,3 +1,5 @@
+import CoffeePoll from '@/components/CoffeePoll'
+
 export default function Home() {
-  return <h1>Hello World</h1>
+  return <CoffeePoll />
 }
