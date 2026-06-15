@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+  --font-wordmark: var(--font-cormorant);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.alsama-wordmark {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
