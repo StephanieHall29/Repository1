@@ -1,11 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
-import { VOTE_OPTIONS, VoteOption } from '@/lib/supabase'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+import { getSupabase, VOTE_OPTIONS, VoteOption } from '@/lib/supabase'
 
 export async function POST(req: NextRequest) {
   const { option } = await req.json()
@@ -14,6 +8,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid option' }, { status: 400 })
   }
 
+  const supabase = getSupabase()
   const { error } = await supabase.from('votes').insert({ option })
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
